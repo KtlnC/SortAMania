@@ -3,7 +3,7 @@ package challengeOne;
 import java.util.Arrays;
 
 public class challengeOne {
-	
+	 
 	public static void main(String[] args)
 	{
 		int[] list1 = {1,5,3,2,7,9,3};
