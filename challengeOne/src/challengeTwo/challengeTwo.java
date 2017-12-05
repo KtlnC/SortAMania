@@ -6,7 +6,10 @@ public class challengeTwo {
 	
 	public static void main(String[] args)
 	{
+		String[] list = {"quiet", "heart", "loved", "hated", "sport"};
 		
+		System.out.println(found(list, "hated"));
+		printArr(mergeSort(list));
 	}
 	
 	public static String[] merge(String[] list1, String[] list2)
@@ -85,18 +88,25 @@ public class challengeTwo {
 		return merge(mergeSort(left),mergeSort(right));
 		}
 	}
+	
+	public static void printArr(String[] arr)
+	{
+		for(int i=0; i<arr.length;i++)
+		{
+			System.out.print(arr[i] + " ");
+		}
+	}
 		
 	public static int found(String[] list, String s)
 	{
-		mergeSort(list);
-		int index = 0;
+		int index = -1;
+		list=mergeSort(list);
 		for(int i = 0; i < list.length; i++)
 		{
 			if(list[i].equals(s))
 			{
 				index =  i;
 			}
-			index =  -1;
 		}
 		return index;
 
