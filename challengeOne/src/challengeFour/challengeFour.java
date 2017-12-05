@@ -4,12 +4,14 @@ public class challengeFour {
 
 	 public static void main(String[]args)
 	 {
-		 int[][] list= {{1,3,5},{6,8,3}};
+		 int[][] list= {{1,3,5},{6,8,3},{100,50,20}};
 		
-		 printarr(sortarr(list));
+		
+		 System.out.print(sortarr(list));
 	 }
-	 public static int[] sortarr(int[][]arr)
+	 public static int sortarr(int[][]arr)
 	 {
+		 int median = 0;
 		 int[] list = new int[arr.length];
 		 for(int i = 0;i<arr.length;i++)
 		 {
@@ -17,7 +19,8 @@ public class challengeFour {
 			list[i] = challengeOne.median(arr[i]);
 			 
 		 }
-		 return list;
+		median = challengeOne.median(list);
+		return median;
 	 }
 	 public static void printarr(int[]arr)
 	 {
