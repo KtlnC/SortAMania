@@ -5,14 +5,17 @@ public class challengeFour {
 	 public static void main(String[]args)
 	 {
 		 int[][] list= {{1,3,5},{6,8,3}};
+		
 		 printarr(sortarr(list));
 	 }
 	 public static int[] sortarr(int[][]arr)
 	 {
-		 int[] list = new int[2];
+		 int[] list = new int[arr.length];
 		 for(int i = 0;i<arr.length;i++)
 		 {
-			 list[i] = challengeOne.median(arr[i]);
+			
+			list[i] = challengeOne.median(arr[i]);
+			 
 		 }
 		 return list;
 	 }

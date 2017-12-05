@@ -103,7 +103,7 @@ public class challengeOne {
 	public static int median(int[] list)
 	{
 		int median = 0;
-		mergeSort(list);
+		list = mergeSort(list);
 		if(list.length%2 != 0)
 		{
 			median =  list[list.length/2];
