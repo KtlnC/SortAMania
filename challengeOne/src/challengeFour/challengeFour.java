@@ -11,7 +11,8 @@ public class challengeFour {
 		 int[] list = new int[2];
 		 for(int i = 0;i<arr.length;i++)
 		 {
-			 challengeOne.median(arr[i]);
+			 list[i] = challengeOne.median(arr[i]);
 		 }
+		 return list;
 	 }
 }
