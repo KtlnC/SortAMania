@@ -1,13 +1,14 @@
 package challengeOne;
-
 import java.util.Arrays;
 
+/**Created by Lamia Islam and Kaitlyn Cao
+ * */
 public class challengeOne {
 	 
 	public static void main(String[] args)
 	{
 		int[] list1 = {1,5,3,2,7,9,3};
-		int[] list2 = {7,7,1,3,2,8};
+		//int[] list2 = {7,7,1,3,2,8};
 		
 		//printArr(mergeSort(merge(list1,list2)));
 		printArr(mergeSort(list1));
@@ -15,6 +16,10 @@ public class challengeOne {
 	
 	}
 	
+	/*@param list1 takes in an array of integers
+	 * @param list2 takes in an array of integers
+	 * 
+	 * */
 	public static int[] merge(int[] list1, int[] list2)
 	{	
 		int[] result  = new int[list1.length + list2.length];
@@ -71,6 +76,9 @@ public class challengeOne {
 		return result; 
 	}
 	
+	/*@param list takes in an array of integers
+	 * 
+	 * */
 	public static int[] mergeSort(int[] list)
 	{
 		
@@ -92,6 +100,11 @@ public class challengeOne {
 		}
 	}
 	
+
+	
+	/*@param arr takes in an array of integers
+	 * prints out each item in the array
+	 * */
 	public static void printArr(int[] arr)
 	{
 		for(int i = 0; i<arr.length; i++)
@@ -100,6 +113,9 @@ public class challengeOne {
 		}
 	}
 	
+	/*@param list takes in an array of integers
+	 * sorts the list and returns the median
+	 * */
 	public static int median(int[] list)
 	{
 		int median = 0;

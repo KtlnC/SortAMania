@@ -9,6 +9,9 @@ public class challengeFour {
 		
 		 System.out.print(sortarr(list));
 	 }
+	 
+	 /*@param arr multidimensional array of integers
+	  * */
 	 public static int sortarr(int[][]arr)
 	 {
 		 int median = 0;
@@ -23,6 +26,10 @@ public class challengeFour {
 		median = challengeOne.median(list);
 		return median;
 	 }
+	 
+	 /*@param arr takes in an array of integers
+	  * prints out each item in the array
+	  * */
 	 public static void printarr(int[]arr)
 	 {
 		 for(int i = 0;i<arr.length;i++)

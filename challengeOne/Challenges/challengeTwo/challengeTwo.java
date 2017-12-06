@@ -12,6 +12,7 @@ public class challengeTwo {
 		printArr(mergeSort(list));
 	}
 	
+	/*@param list1, @param list2 takes in an array of strings*/
 	public static String[] merge(String[] list1, String[] list2)
 	{	
 		String[] result  = new String[list1.length + list2.length];
