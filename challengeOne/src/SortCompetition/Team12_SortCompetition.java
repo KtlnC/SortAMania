@@ -12,7 +12,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	 * @param list2 takes in an array of integers
 	 * 
 	 * */
-	public  int[] merge(int[] list1, int[] list2)
+	public int[] merge(int[] list1, int[] list2)
 	{	
 		int[] result  = new int[list1.length + list2.length];
 		int index = 0;
@@ -71,7 +71,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	/*@param list takes in an array of integers
 	 * 
 	 * */
-	public  int[] mergeSort(int[] list)
+	public int[] mergeSort(int[] list)
 	{
 		
 		int middle = list.length/2;
@@ -84,11 +84,8 @@ public class Team12_SortCompetition extends SortCompetition {
 		{
 			int[] left = Arrays.copyOfRange(list,0,middle);
 			int[] right = Arrays.copyOfRange(list,middle,list.length);
-		
-		
-		
-		
-		return merge(mergeSort(left),mergeSort(right));
+	
+			return merge(mergeSort(left),mergeSort(right));
 		}
 	}
 	
@@ -97,7 +94,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	/*@param arr takes in an array of integers
 	 * prints out each item in the array
 	 * */
-	public  void printArr(int[] arr)
+	public void printArr(int[] arr)
 	{
 		for(int i = 0; i<arr.length; i++)
 		{
@@ -108,7 +105,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	/*@param list takes in an array of integers
 	 * sorts the list and returns the median
 	 * */
-	public  int challengeOne(int[] list)
+	public int challengeOne(int[] list)
 	{
 		int median = 0;
 		list = mergeSort(list);
@@ -180,27 +177,29 @@ public class Team12_SortCompetition extends SortCompetition {
 		return result; 
 	}
 	
-	public  String[] mergeSort(String[] list)
+	/*@param list takes in an array of strings 
+	 * */
+	public String[] mergeSort(String[] list)
 	{
 		
 		int middle = list.length/2;
 		
 		if(list.length <= 1)
-	{
+		{
 			return list;
 		}
 		else
 		{
 			String[] left = Arrays.copyOfRange(list,0,middle);
 			String[] right = Arrays.copyOfRange(list,middle,list.length);
-		
-		
-		
-		
-		return merge(mergeSort(left),mergeSort(right));
+			
+			return merge(mergeSort(left),mergeSort(right));
 		}
 	}
 	
+	/*@param arr takes in an array of strings
+	 * iterates through the array and prints each item
+	 * */
 	public  void printArr(String[] arr)
 	{
 		for(int i=0; i<arr.length;i++)
@@ -209,7 +208,7 @@ public class Team12_SortCompetition extends SortCompetition {
 		}
 	}
 		
-	public  int challengeTwo(String[] list, String s)
+	public int challengeTwo(String[] list, String s)
 	{
 		int index = -1;
 		list=mergeSort(list);
@@ -224,7 +223,7 @@ public class Team12_SortCompetition extends SortCompetition {
 
 	}
 	
-	public  int challengeThree(int[] list)
+	public int challengeThree(int[] list)
 	{
 		int median = 0;
 		mergeSort(list);
@@ -241,7 +240,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	
 	 /*@param arr multidimensional array of integers
 	  * */
-	 public  int challengeFour(int[][]arr)
+	 public int challengeFour(int[][]arr)
 	 {
 		 int median = 0;
 		 int[] list = new int[arr.length];
@@ -256,12 +255,87 @@ public class Team12_SortCompetition extends SortCompetition {
 		return median;
 	 }
 
-	 public  int challengeFive(Comparable[] arr, Comparable query)
+	 public int challengeFive(Comparable[] arr, Comparable query)
 	 {
 		 return 0;
 	 }
-	 
-	 public  String greeting()
+		/*@param list1, @param list2 takes in an array of strings*/
+		public  Comparable[] merge(Comparable[] list1, Comparable[] list2)
+		{	
+			Comparable[] result  = new Comparable[list1.length + list2.length];
+			int index = 0;
+			int i = 0, j = 0;
+			
+			while(i < list1.length && j < list2.length)
+			{
+					if(list1[i].compareTo(list2[j])<=0)
+					{
+						result[index] = list1[i];
+						i++;
+						index++;
+					}
+					
+					else if(list1[i].compareTo(list2[j]) > 0)
+					{
+						result[index] = list2[j];
+						j++;
+						index++;					
+					}
+					
+					if(list1[list1.length-1].compareTo(list2[list2.length-1])<=0)
+					{
+						result[result.length-1] = list2[list2.length-1];
+					}
+					
+					else if(list2[list2.length-1].compareTo(list1[list1.length-1])<=0)
+					{
+						result[result.length-1] = list1[list1.length-1];
+					}
+					
+			}
+			if(i<list1.length)
+			{
+				while(i<list1.length)
+				{
+					result[index] = list1[i];
+					index++;
+					i++;
+				}
+				
+				
+			}
+			if(j<list2.length)
+			{
+				while(j<list2.length)
+				{
+					result[index] = list2[j];
+					index++;
+					j++;
+				}
+			
+			}
+				
+			return result; 
+		}
+	public Comparable[] mergeSort(Comparable[] list)
+	{
+		
+		int middle = list.length/2;
+		
+		if(list.length <= 1)
+		{
+			return list;
+		}
+		else
+		{
+			Comparable[] left = Arrays.copyOfRange(list,0,middle);
+			Comparable[] right = Arrays.copyOfRange(list,middle,list.length);
+			
+			return merge(mergeSort(left),mergeSort(right));
+		}
+	}
+		
+	 public String greeting()
 	 {
 		 return "Hey ;) it's team 12 ";
 	 }
