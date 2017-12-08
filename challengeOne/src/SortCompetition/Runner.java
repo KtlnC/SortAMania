@@ -1,6 +1,6 @@
 package SortCompetition;
 
-import Team12_SortCompetition;
+
 
 public class Runner {
 	
@@ -10,25 +10,27 @@ public class Runner {
 		
 		//CHALLENGE ONE 
 			int[] list1 = {1,5,3,2,7,9,3}; //1,2,3,3,5,7,9
+		
 			//int[] list2 = {7,7,1,3,2,8};
 			
 			//printArr(mergeSort(merge(list1,list2)));
-			example.printArr(example.mergeSort(list1));
+			//example.printArr(example.mergeSort(list1));
 			System.out.print(example.challengeOne(list1));
 		
 		//CHALLENGE TWO
 			String[] list = {"quiet", "heart", "loved", "hated", "sport"};
 			
 			System.out.println(example.challengeTwo(list, "hated"));
-			example.printArr(example.mergeSort(list));
+			example.printArr(example.quickSort(list,0,list.length-1));
 			
 		//CHALLENGE THREE
-			int[] list3 = {1,5,3,2,7,9,3};
+			int[] list3 = {1,5,3,2,7,9,3};//1,2,3,3,5,7,9
+			System.out.print(example.challengeThree(list3));
 			//int[] list2 = {7,7,1,3,2,8};
 			
 			//printArr(mergeSort(merge(list1,list2)));
-			example.printArr(example.mergeSort(list3));
-			System.out.print(example.challengeThree(list3));
+			/*example.printArr(example.mergeSort(list3));
+			System.out.print(example.challengeThree(list3));*/
 			
 		//CHALLENGE FOUR
 			 int[][] list4 = {{1,3,5},{6,8,3},{100,50,20}};				
@@ -36,7 +38,10 @@ public class Runner {
 			 System.out.print(example.challengeFour(list4));
 			 
 		//CHALLENGE FIVE
-	
+//int[] list = {};
+			
+			System.out.println(example.challengeFive(list, "hated"));
+			//example.printArr(example.mergeSort(list));
 	}
 	
 }

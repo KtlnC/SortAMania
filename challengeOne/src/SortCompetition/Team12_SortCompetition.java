@@ -108,7 +108,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	public int challengeOne(int[] list)
 	{
 		int median = 0;
-		list = mergeSort(list);
+		list = quickSort(list,0,list.length-1);
 		if(list.length%2 != 0)
 		{
 			median =  list[list.length/2];
@@ -211,7 +211,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	public int challengeTwo(String[] list, String s)
 	{
 		int index = -1;
-		list=mergeSort(list);
+		list=quickSort(list,0,list.length-1);
 		for(int i = 0; i < list.length; i++)
 		{
 			if(list[i].equals(s))
@@ -226,7 +226,7 @@ public class Team12_SortCompetition extends SortCompetition {
 	public int challengeThree(int[] list)
 	{
 		int median = 0;
-		mergeSort(list);
+		quickSort(list,0,list.length-1);
 		if(list.length%2 != 0)
 		{
 			median =  list[list.length/2];
@@ -254,11 +254,21 @@ public class Team12_SortCompetition extends SortCompetition {
 		median = challengeOne(list);
 		return median;
 	 }
+	 public int challengeFive(Comparable[] list, Comparable s)
+		{
+			int index = -1;
+			list=quickSort(list,0,list.length-1);
+			for(int i = 0; i < list.length; i++)
+			{
+				if(list[i].equals(s))
+				{
+					index =  i;
+				}
+			}
+			return index;
 
-	 public int challengeFive(Comparable[] arr, Comparable query)
-	 {
-		 return 0;
-	 }
+		}
+	
 		/*@param list1, @param list2 takes in an array of strings*/
 		public  Comparable[] merge(Comparable[] list1, Comparable[] list2)
 		{	
@@ -334,8 +344,143 @@ public class Team12_SortCompetition extends SortCompetition {
 			return merge(mergeSort(left),mergeSort(right));
 		}
 	}
+	
+	public String[] quickSort(String arr[], int low, int high)
+    {
+        if (low < high)
+        {
+            /* pi is partitioning index, arr[pi] is 
+              now at right place */
+            int pi = partition(arr, low, high);
+ 
+            // Recursively sort elements before
+            // partition and after partition
+            quickSort(arr, low, pi-1);
+            quickSort(arr, pi+1, high);
+        }
+        return arr;
+        
+    }
+	public int partition(String arr[], int low, int high)
+    {
+        String pivot = arr[high]; 
+        int i = (low-1); // index of smaller element
+        for (int j=low; j<high; j++)
+        {
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j].compareTo(pivot)<=0)
+            {
+                i++;
+ 
+                // swap arr[i] and arr[j]
+                String temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+ 
+        // swap arr[i+1] and arr[high] (or pivot)
+        String temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
+ 
+        return i+1;
+    }
+	
+	public int[] quickSort(int arr[], int low, int high)
+    {
+        if (low < high)
+        {
+            /* pi is partitioning index, arr[pi] is 
+              now at right place */
+            int pi = partition(arr, low, high);
+ 
+            // Recursively sort elements before
+            // partition and after partition
+            quickSort(arr, low, pi-1);
+            quickSort(arr, pi+1, high);
+        }
+        return arr;
+        
+    }
+	public int partition(int arr[], int low, int high)
+	    {
+	        int pivot = arr[high]; 
+	        int i = (low-1); // index of smaller element
+	        for (int j=low; j<high; j++)
+	        {
+	            // If current element is smaller than or
+	            // equal to pivot
+	            if (arr[j] <= pivot)
+	            {
+	                i++;
+	 
+	                // swap arr[i] and arr[j]
+	                int temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+	        }
+	 
+	        // swap arr[i+1] and arr[high] (or pivot)
+	        int temp = arr[i+1];
+	        arr[i+1] = arr[high];
+	        arr[high] = temp;
+	 
+	        return i+1;
+	    }
+	public Comparable[] quickSort(Comparable arr[], int low, int high)
+    {
+        if (low < high)
+        {
+            /* pi is partitioning index, arr[pi] is 
+              now at right place */
+            int pi = partition(arr, low, high);
+ 
+            // Recursively sort elements before
+            // partition and after partition
+            quickSort(arr, low, pi-1);
+            quickSort(arr, pi+1, high);
+        }
+        return arr;
+        
+    }
+	public int partition(Comparable arr[], int low, int high)
+	    {
+	        Comparable pivot = arr[high]; 
+	        int i = (low-1); // index of smaller element
+	        for (int j=low; j<high; j++)
+	        {
+	            // If current element is smaller than or
+	            // equal to pivot
+	            if (arr[j].compareTo(pivot)<=0)
+	            {
+	                i++;
+	 
+	                // swap arr[i] and arr[j]
+	                Comparable temp = arr[i];
+	                arr[i] = arr[j];
+	                arr[j] = temp;
+	            }
+	        }
+	 
+	        // swap arr[i+1] and arr[high] (or pivot)
+	        Comparable temp = arr[i+1];
+	        arr[i+1] = arr[high];
+	        arr[high] = temp;
+	 
+	        return i+1;
+	    }
+	public static void swap(int arr[],int i,int j)
+	{
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
 		
-	 public String greeting()
+	}
+
+	public String greeting()
 	 {
 		 return "Hey ;) it's team 12 ";
 	 }
